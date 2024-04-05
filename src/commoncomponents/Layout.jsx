@@ -7,8 +7,8 @@ import Avatar from '@mui/material/Avatar';
 import ListItemButton from '@mui/material/ListItemButton';
 
 function Layout({ children }) {
-    const [isOpen, setIsOpen] = useState(false)
-    const toggle = () => setIsOpen(!isOpen)
+    const [isOpen, setIsOpen] = useState(true)
+    const toggle = () => setIsOpen(isOpen)
     const menuItem = [
         {
             path: "/",
@@ -65,11 +65,10 @@ function Layout({ children }) {
                     ))}
                 </div>
             </div>
-            <div className='col-md-8'>
+            <div className='col-md-10'>
                 <main>{children}</main>
 
             </div>
-            <div className='col-md-2 ' >updates</div>
         </div>
     );
 }

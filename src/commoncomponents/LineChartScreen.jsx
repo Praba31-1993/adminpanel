@@ -46,12 +46,12 @@ const data = [
   },
 ];
 
-export default class LineCharts extends PureComponent {
+export default class LineChartScreen extends PureComponent {
   static demoUrl = 'https://codesandbox.io/s/simple-line-chart-kec3v';
 
   render() {
     return (
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width={720} height={400}>
         <LineChart
           width={500}
           height={300}

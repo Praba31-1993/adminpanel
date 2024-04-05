@@ -10,7 +10,7 @@ import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
 export default function ToDoList() {
   return (
-    <List sx={{ width: '100%', maxWidth: 360, marginTop:'15px' }}>
+    <List sx={{ width: '100%', maxWidth: 360, marginTop: '15px' }}>
       <ListItem>
         <ListItemAvatar>
           <Avatar>
@@ -26,6 +26,22 @@ export default function ToDoList() {
           </Avatar>
         </ListItemAvatar>
         <ListItemText primary="Work" secondary="Jan 7, 2014" />
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar>
+            <BeachAccessIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+      </ListItem>
+      <ListItem>
+        <ListItemAvatar>
+          <Avatar>
+            <BeachAccessIcon />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary="Vacation" secondary="July 20, 2014" />
       </ListItem>
       <ListItem>
         <ListItemAvatar>
