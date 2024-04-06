@@ -7,49 +7,27 @@ import Avatar from '@mui/material/Avatar';
 import ImageIcon from '@mui/icons-material/Image';
 import WorkIcon from '@mui/icons-material/Work';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import { Button, Typography } from '@mui/material';
+import './Common.css'
+
 
 export default function ToDoList() {
   return (
-    <List sx={{ width: '100%', maxWidth: 360, marginTop: '15px' }}>
+    <List >
       <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <ImageIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Photos" secondary="Jan 9, 2014" />
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <WorkIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Work" secondary="Jan 7, 2014" />
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
-      </ListItem>
-      <ListItem>
-        <ListItemAvatar>
-          <Avatar>
-            <BeachAccessIcon />
-          </Avatar>
-        </ListItemAvatar>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+        <Typography style={{  width: '60%', display:'flex', justifyContent:'space-between'  }}>
+          <ListItemAvatar style={{marginTop:'10px'}}>
+            <Avatar>
+              <ImageIcon />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText primary="Jack" secondary="CEO, Sas Tech" />
+        </Typography>
+        <Typography className='networkButtons' style={{ width: '40%', display:'flex', justifyContent:'space-between' }}>
+          <Button variant='contained'>Invite</Button>
+          <Button variant='outlined'>Cancel</Button>
+
+        </Typography>
       </ListItem>
     </List>
   );

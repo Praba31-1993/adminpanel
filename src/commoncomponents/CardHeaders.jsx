@@ -1,11 +1,13 @@
 import React from 'react';
+import "./Common.css"
+import SharesImage from "../asserts/images/png/shares.png"
 import ProjectImage from "../asserts/images/png/projects.png"
 import EmployeeImage from "../asserts/images/png/employees.png"
 import { FaCommentAlt, FaRegChartBar, FaShoppingBag, FaThList, FaBars, FaTh, FaUserAlt } from "react-icons/fa"
-function CardHeaders({ title, price, totalProjects, totalEmployees, priceOfficeAssets, OnGoingProject }) {
+function CardHeaders({ title, price, totalProjects, totalEmployees, backgroundColor }) {
     return (
         <>
-            <div class="card  p-3 d-flex-column " style={{ width: '18em', borderRadius: '12px' }}>
+            <div class="card p-3 d-flex-column cardHeader" style={{  borderRadius: '12px',backgroundColor:backgroundColor, border:'1px solid blue' }}>
                 <div className='row p-2 d-flex justify-content-between'>
                     <h5 >
                         {title}
@@ -28,7 +30,7 @@ function CardHeaders({ title, price, totalProjects, totalEmployees, priceOfficeA
                                 />
                                 :
 
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLgvkO55aou18s5mDRDeYkwVsfQwvi7hAjGqXPbA8Uvg&s"
+                                <img src={SharesImage}
                                     style={{ width: '100px', height: '100px' }}
                                 />
                             }
@@ -56,4 +58,3 @@ function CardHeaders({ title, price, totalProjects, totalEmployees, priceOfficeA
 
 export default CardHeaders;
 
-{/* <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLgvkO55aou18s5mDRDeYkwVsfQwvi7hAjGqXPbA8Uvg&s" */ }

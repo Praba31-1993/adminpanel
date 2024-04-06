@@ -1,0 +1,31 @@
+@media only screen and (min-width: 1101px) and (max-width: 2560px) {
+    .cardHeader {
+        width: 32%;
+    }
+    .networkButtons{
+        display: flex;
+    }
+
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1100px) {
+    .cardHeader {
+        width: 48%;
+    }
+    .networkButtons{
+        display: flex;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .cardHeader {
+        width: 100%;
+    }
+    .networkButtons{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+}

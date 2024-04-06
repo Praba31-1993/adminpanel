@@ -8,7 +8,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 
 function Layout({ children }) {
     const [isOpen, setIsOpen] = useState(true)
-    const toggle = () => setIsOpen(isOpen)
+    const toggle = () => setIsOpen(!isOpen) // Corrected toggle logic
     const menuItem = [
         {
             path: "/",
@@ -43,22 +43,20 @@ function Layout({ children }) {
     ]
 
     return (
-        <div className='row' style={{marginRight:'0px'}}>
-            <div className='col-md-2'>
-                <div style={{ width: isOpen ? "200px" : "65px" }} className='sidebar'>
+        <div className='row' style={{ marginRight: '0px' }}>
+            <div className='col-md-2 col-sm-12' style={{ display: isOpen ? 'block' : 'none' }}>
+                <div className='sidebar'>
                     <div className='top_section' style={{ padding: isOpen ? '10px' : '25px' }}>
                         <ListItemButton style={{ display: isOpen ? "flex" : "none" }}>
                             <ListItemAvatar>
-                                <Avatar
-                                    alt={'R'}
-                                />
+                                <Avatar alt={'R'} />
                             </ListItemAvatar>
                             <ListItemText primary={'Dany'} />
                         </ListItemButton>
                         <FaBars onClick={toggle} />
                     </div>
                     {menuItem.map((item, index) => (
-                        <NavLink to={item.path} key={index} className="link" activeclassName="active" style={{ width: isOpen ? '' : 'fit-content' }}>
+                        <NavLink to={item.path} key={index} className="link" activeClassName="active" style={{ width: isOpen ? '' : 'fit-content' }}>
                             <div className='icon'>{item.icon}</div>
                             <div className='sidebarText' style={{ display: isOpen ? "block" : "none" }}>{item.name}</div>
                         </NavLink>
@@ -67,7 +65,6 @@ function Layout({ children }) {
             </div>
             <div className='col-md-10'>
                 <main>{children}</main>
-
             </div>
         </div>
     );

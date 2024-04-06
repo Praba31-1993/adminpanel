@@ -1,11 +1,17 @@
 import React from 'react';
 import Button from '@mui/material/Button';
+import LineChartScreen from '../../commoncomponents/LineChartScreen';
+import PieChartScreen from '../../commoncomponents/PieChartScreen';
+import Example from '../../commoncomponents/NewChart';
+// import PieChartScreen from '../../commoncomponents/PieChartScreen';
 function About(props) {
     return (
+
         <div>
-            <h1>About</h1>
-            
-      <Button variant="contained">Contained</Button>
+            {/* <PieChartScreen/> */}
+            {/* <LineChartScreen/> */}
+            {/* <PieChartScreen/> */}
+            <Example/>
         </div>
     );
 }

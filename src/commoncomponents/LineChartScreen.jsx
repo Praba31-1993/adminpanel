@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,PieChart, Pie, ResponsiveContainer } from 'recharts';
 
 const data = [
   {
@@ -51,16 +51,16 @@ export default class LineChartScreen extends PureComponent {
 
   render() {
     return (
-      <ResponsiveContainer width={720} height={400}>
+      <ResponsiveContainer  height={300}>
         <LineChart
-          width={500}
-          height={300}
+          width={300}
+          height={100}
           data={data}
           margin={{
             top: 5,
             right: 30,
             left: 20,
-            bottom: 5,
+            // bottom: 5,
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
