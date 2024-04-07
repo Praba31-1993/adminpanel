@@ -1,21 +1,36 @@
-import * as React from 'react';
+import React,{useState} from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
-import ImageIcon from '@mui/icons-material/Image';
-import WorkIcon from '@mui/icons-material/Work';
-import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 import { Button, Typography } from '@mui/material';
 import { networkData } from './Datas';
 import './Common.css'
 
-
 export default function ToDoList() {
+  const [userId, setUserId] = useState([])
+  const [declinedId, setDeclinedId] = useState([])
+  const [users, setUsers]=useState(networkData)
+  
+  const handleInvite =(id)=>{
+    let newUserId = [...userId];
+    newUserId.push(id);
+    setUserId(newUserId)
+  }
+
+const handleDecline = (id) => {
+    const newUserId = userId.filter(userId => userId !== id);
+    if(newUserId){
+    let newDeclinedId = [...declinedId]
+    newDeclinedId.push(id)
+    setDeclinedId(newDeclinedId)
+  }
+  }
+    console.log('decline',declinedId, "acccept", userId);
   return (
     <List >
-      {networkData?.map((data) => (
+      {users?.map((data, index) => (
         <>
           <ListItem>
             <Typography style={{ width: '60%', display: 'flex', justifyContent: 'space-between' }}>
@@ -25,9 +40,12 @@ export default function ToDoList() {
               <ListItemText primary={data?.name} secondary={`${data?.role},${data?.company_name}`} />
             </Typography>
             <Typography className='networkButtons' style={{ width: '40%', display: 'flex', justifyContent: 'space-between' }}>
-              <Button variant='contained'>Invite</Button>
-              <Button variant='outlined'>Cancel</Button>
-
+              
+              <Button variant='contained' color={userId.includes(data?.id)?"success":"primary"} 
+              disabled={declinedId?.includes(data?.id)}
+               onClick={()=>handleInvite(data?.id)}>{userId.includes(data?.id)?"Accepted":"Accept"}</Button>
+              
+              <Button variant='outlined' disabled={userId?.includes(data?.id)} color={declinedId.includes(data?.id)?"success":"primary"}  onClick={()=>handleDecline(data?.id)}>{declinedId.includes(data?.id)?"Declined":"Decline"}</Button>
             </Typography>
           </ListItem>
         </>

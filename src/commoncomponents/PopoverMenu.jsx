@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import Button from '@mui/material/Button';
+import {Button, Typography} from '@mui/material';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import PermIdentityIcon from '@mui/icons-material/PermIdentity';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 export default function PopOverMenu({ title, shareValues,handleEmployeeClientValues }) {
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -53,14 +55,17 @@ export default function PopOverMenu({ title, shareValues,handleEmployeeClientVal
                     <>
                         {employeeClientMenus?.map((employeeClientMenu) => (
                             <MenuItem key={employeeClientMenu} onClick={() => handleEmployeeClientMenuItemClick(employeeClientMenu)}>
-                                {employeeClientMenu}
+                                <PermIdentityIcon /> 
+                                <Typography sx={{fontSize:'12px', marginLeft:'10px'}}>{employeeClientMenu}</Typography>
                             </MenuItem>))}
                     </>
                     :
                     <>
                         {sharesRevenuesAssetsMenus?.map((sharesRevenuesAssetsMenu) => (
                             <MenuItem key={sharesRevenuesAssetsMenu} onClick={() => handleShareRevenueAssetMenuItemClick(sharesRevenuesAssetsMenu)}>
-                                {sharesRevenuesAssetsMenu}
+                                <MonetizationOnIcon /> 
+                                <Typography sx={{fontSize:'12px', marginLeft:'10px'}}>{sharesRevenuesAssetsMenu}</Typography>
+
                             </MenuItem>))}
                     </>
                 }

@@ -1,18 +1,15 @@
 import React from 'react';
-import "./Common.css"
 import SharesImage from "../asserts/images/png/shares.png"
 import ProjectImage from "../asserts/images/png/projects.png"
 import EmployeeImage from "../asserts/images/png/employees.png"
 import RevenueImage from "../asserts/images/png/revenue.png"
 import AssertImage from "../asserts/images/png/assets.png"
 import ClientImage from "../asserts/images/png/client.png"
-import { FaCommentAlt, FaRegChartBar, FaShoppingBag, FaThList, FaBars, FaTh, FaUserAlt } from "react-icons/fa"
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import PopOverMenu from './PopoverMenu';
-import { MarginOutlined } from '@mui/icons-material';
-function CardHeaders({ title, price, total,backgroundColor, shareValues, handleEmployeeClientValues }) {
+import "./Common.css"
 
-
-
+function CardHeaders({ title, price, total, backgroundColor, shareValues, handleEmployeeClientValues }) {
     return (
         <>
             <div class="card p-3 d-flex-column cardHeader" style={{ borderRadius: '12px', backgroundColor: backgroundColor, border: '1px solid blue' }}>
@@ -50,11 +47,12 @@ function CardHeaders({ title, price, total,backgroundColor, shareValues, handleE
                     <div className='d-flex-column ' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                         {title === "Shares" || title === "Revenues" || title === "Assets" ?
                             <div className='text-right mt-4' style={{ fontSize: '30px', fontWeight: 600 }}>
+                                <CurrencyRupeeIcon />
                                 {title === "Shares" ? price?.share?.value : title === "Revenues" ? price?.revenue?.value : title === "Assets" && price?.asset?.value}
                             </div>
                             :
                             <div className='text-right mt-4' style={{ fontSize: '30px', fontWeight: 600 }}>
-                                {title === "Employees" ? total?.employee?.totalEmployeesCount  : title==="Projects" ? total?.project?.totalProjectsCount:title==="Clients" && total?.client?.totalClientsCount}
+                                {title === "Employees" ? total?.employee?.totalEmployeesCount : title === "Projects" ? total?.project?.totalProjectsCount : title === "Clients" && total?.client?.totalClientsCount}
                             </div>
                         }
                         <div className='text-secondary' style={{ fontSize: '10px' }}>Last updated Today</div>

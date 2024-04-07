@@ -9,11 +9,12 @@ import Navbar from './Navbar';
 
 function Layout({ children }) {
     const [isOpen, setIsOpen] = useState(true)
-    const toggle = () => setIsOpen(!isOpen) // Corrected toggle logic
+    const toggle = () => setIsOpen(!isOpen)
     const menuItem = [
+        
         {
-            path: "/",
-            name: "dashboard",
+            path: "/dashboard",
+            name: "Dashboard",
             icon: <FaTh />
         },
         {
@@ -52,9 +53,9 @@ function Layout({ children }) {
                             <ListItemAvatar>
                                 <Avatar alt={'R'} />
                             </ListItemAvatar>
-                            <ListItemText primary={'Dany'} />
+                            <ListItemText primary={'Uvan'} />
                         </ListItemButton>
-                        <FaBars onClick={toggle} />
+                        {/* <FaBars onClick={toggle} /> */}
                     </div>
                     {menuItem.map((item, index) => (
                         <NavLink to={item.path} key={index} className="link" activeClassName="active" style={{ width: isOpen ? '' : 'fit-content' }}>
@@ -67,7 +68,6 @@ function Layout({ children }) {
             <div className='col-md-10 w-100' style={{ marginLeft: '-10px' }}>
                 <Navbar />
                 <main>
-
                     {children}</main>
             </div>
         </div>

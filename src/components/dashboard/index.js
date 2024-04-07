@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import CardHeaders from '../../commoncomponents/CardHeaders';
 import LineChartScreen from '../../commoncomponents/LineChartScreen';
 import PieChartScreen from '../../commoncomponents/PieChartScreen';
-import NetworkCard from '../../commoncomponents/NetworkCards';
 import ToDoList from '../../commoncomponents/ToDoList';
 import { price, projectAndEmployees } from '../../commoncomponents/Datas';
 
@@ -67,9 +66,8 @@ function Dashboard() {
                     <div class="card w-100 " style={{ borderRadius: '12px' }}>
                         <div class="card-body">
                             <h5 class="card-title">Board Meeting</h5>
-
-                            <p>April 08 at 10:30 AM</p>
-                            <p>You have been invited to attend the Board Meeting</p>
+                            <p style={{ fontSize: '14px' }}>April 08 at 10:30 AM.</p>
+                            <p style={{ fontSize: '14px' }}>You have been invited to attend the Board Meeting.</p>
                         </div>
                     </div>
                 </div>

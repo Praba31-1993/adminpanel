@@ -11,10 +11,10 @@ export const projectAndEmployees = {
 }
 
 export const networkData = [
-    { profile: "", name: "John", role: "CEO", company_name: "zufiz Tech" },
-    { profile: "", name: "Alice", role: "CTO", company_name: "Tech Solutions Inc." },
-    { profile: "", name: "Emma", role: "COO", company_name: "Innovative Solutions Ltd." },
-    { profile: "", name: "Michael", role: "CFO", company_name: "Finance Associates LLC" },
-    { profile: "", name: "Sophia", role: "CMO", company_name: "Marketing Experts Ltd." },
-    { profile: "", name: "William", role: "CIO", company_name: "Tech Innovators LLC" }
+    { id:"1521", profile: "", name: "John", role: "CEO", company_name: "zufiz Tech" },
+    { id:"1520", profile: "", name: "Alice", role: "CTO", company_name: "Tech Solutions Inc." },
+    { id:"1522", profile: "", name: "Emma", role: "COO", company_name: "Innovative Solutions Ltd." },
+    { id:"1548", profile: "", name: "Michael", role: "CFO", company_name: "Finance Associates LLC" },
+    { id:"1532", profile: "", name: "Sophia", role: "CMO", company_name: "Marketing Experts Ltd." },
+    { id:"1595", profile: "", name: "William", role: "CIO", company_name: "Tech Innovators LLC" }
 ];
