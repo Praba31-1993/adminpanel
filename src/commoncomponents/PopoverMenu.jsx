@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-export default function PopOverMenu({shareValues}) {
+export default function PopOverMenu({ title, shareValues,handleEmployeeClientValues }) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [showRevenue, setShowRevenue] = useState("")
     const [showAssets, setShowAssets] = useState("")
@@ -14,21 +14,29 @@ export default function PopOverMenu({shareValues}) {
     const handleClose = () => {
         setAnchorEl(null);
     };
-    const handleMenuItemClick = (value) => {
-        console.log("ff",value); // Log the clicked menu item's value to the console
+    const handleShareRevenueAssetMenuItemClick = (value) => {
+        console.log("ff", value); 
         shareValues(value)
-        setAnchorEl(null); // Close the menu after selecting a menu item
-    };
+        setAnchorEl(null); 
+        };
 
-    const SharesMenus = ["Shares", "Revenues", "Assets"]
+        const handleEmployeeClientMenuItemClick = (value) => {
+            console.log("employeclient", value); 
+            handleEmployeeClientValues(value)
+            setAnchorEl(null); 
+            };
+    
+    const sharesRevenuesAssetsMenus = ["Shares", "Revenues", "Assets"]
+    const employeeClientMenus = ["Employees", "Clients"]
     return (
-        <div>
+        <div >
             <Button
                 id="basic-button"
                 aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
+                style={{margin:'0 -20px 0 0'}}
             >
                 <MoreVertIcon />
             </Button>
@@ -41,10 +49,22 @@ export default function PopOverMenu({shareValues}) {
                     'aria-labelledby': 'basic-button',
                 }}
             >
-                {SharesMenus?.map((shares) => (
-                    <MenuItem key={shares} onClick={() => handleMenuItemClick(shares)}>
-                        {shares}
-                    </MenuItem>))}
+                {title === "Employees" || title === "Clients" ?
+                    <>
+                        {employeeClientMenus?.map((employeeClientMenu) => (
+                            <MenuItem key={employeeClientMenu} onClick={() => handleEmployeeClientMenuItemClick(employeeClientMenu)}>
+                                {employeeClientMenu}
+                            </MenuItem>))}
+                    </>
+                    :
+                    <>
+                        {sharesRevenuesAssetsMenus?.map((sharesRevenuesAssetsMenu) => (
+                            <MenuItem key={sharesRevenuesAssetsMenu} onClick={() => handleShareRevenueAssetMenuItemClick(sharesRevenuesAssetsMenu)}>
+                                {sharesRevenuesAssetsMenu}
+                            </MenuItem>))}
+                    </>
+                }
+
 
             </Menu>
         </div>

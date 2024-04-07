@@ -220,7 +220,8 @@ const renderActiveShape = (props) => {
         y={ey}
         textAnchor={textAnchor}
         fill="#333"
-      >{`Amt - ${value}`}</text>
+      >{`Amt: ${value}`}
+      </text>
      
     </g>
   );
