@@ -19,9 +19,7 @@ function CardHeaders({ title, price, total, backgroundColor, shareValues, handle
                     </h5>
                     {title === "Projects" ? "" :
                         <div >
-
                             <PopOverMenu title={title} shareValues={(data) => shareValues(data)} handleEmployeeClientValues={(data) => handleEmployeeClientValues(data)}
-
                             />
                         </div>}
                 </div>
@@ -58,10 +56,7 @@ function CardHeaders({ title, price, total, backgroundColor, shareValues, handle
                         <div className='text-secondary' style={{ fontSize: '10px' }}>Last updated Today</div>
                     </div>
                 </div>
-
-
             </div >
-
         </>
     );
 }

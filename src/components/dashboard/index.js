@@ -1,37 +1,33 @@
-import React, {useEffect, useState} from 'react';
+import React, { useState } from 'react';
 import CardHeaders from '../../commoncomponents/CardHeaders';
 import LineChartScreen from '../../commoncomponents/LineChartScreen';
 import PieChartScreen from '../../commoncomponents/PieChartScreen';
 import ToDoList from '../../commoncomponents/ToDoList';
 import { price, projectAndEmployees } from '../../commoncomponents/Datas';
 
-
 function Dashboard() {
-    const [showRevenue, setShowRevenue] = useState(false)
-    const [showAssets, setShowAssets] = useState(false)
-    const [showShares, setShowShares] = useState(true)
     const [sharesRevenueAssets, setSharesRevenueAssets] = useState('Shares')
     const [employeeClient, setEmployeeClient] = useState("Employees")
-    
-    const handleShareValues = (data)=>{
-        console.log("data12",data);
+
+    // Callback function for SharesRevenueAsset
+    const handleShareValues = (data) => {
         setSharesRevenueAssets(data)
     }
 
-    const handleEmployeeClientValues = (data)=>{
-        console.log("data1252",data);
+    // Callback function for EmployeeClient
+    const handleEmployeeClientValues = (data) => {
         setEmployeeClient(data)
     }
-    
+
     return (
         <div>
             <div className='row d-flex flex-wrap justify-content-between' style={{ gap: '1em', padding: '20px 20px 0 20px' }}>
 
-                <CardHeaders title={sharesRevenueAssets} price={price} backgroundColor={"lightsteelblue"} shareValues={(data)=>handleShareValues(data)}/>
+                <CardHeaders title={sharesRevenueAssets} price={price} backgroundColor={"lightsteelblue"} shareValues={(data) => handleShareValues(data)} />
 
                 <CardHeaders title={"Projects"} total={projectAndEmployees} OnGoingProject={"75"} backgroundColor={"lightgray"} />
 
-                <CardHeaders title={employeeClient} total={projectAndEmployees} backgroundColor={"lightsteelblue"} handleEmployeeClientValues={(data)=>handleEmployeeClientValues(data)}/>
+                <CardHeaders title={employeeClient} total={projectAndEmployees} backgroundColor={"lightsteelblue"} handleEmployeeClientValues={(data) => handleEmployeeClientValues(data)} />
 
             </div>
             {/* Second Row */}
@@ -39,14 +35,14 @@ function Dashboard() {
                 <div className='lineChart'>
                     <div class="card w-100" style={{ borderRadius: '12px' }}>
                         <div class="card-body ">
-                            <LineChartScreen title={sharesRevenueAssets}/>
+                            <LineChartScreen title={sharesRevenueAssets} />
                         </div>
                     </div>
                 </div>
                 <div className='pieChart' >
                     <div class="card w-100 " style={{ borderRadius: '12px' }}>
                         <div class="card-body">
-                            <PieChartScreen title={sharesRevenueAssets}/>
+                            <PieChartScreen title={sharesRevenueAssets} />
                         </div>
                     </div>
                 </div>
@@ -57,7 +53,6 @@ function Dashboard() {
                     <div class="card w-100 " style={{ borderRadius: '12px' }}>
                         <div class="card-body">
                             <h5 class="card-title">Network</h5>
-
                             <ToDoList />
                         </div>
                     </div>

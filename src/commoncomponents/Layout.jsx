@@ -11,7 +11,7 @@ function Layout({ children }) {
     const [isOpen, setIsOpen] = useState(true)
     const toggle = () => setIsOpen(!isOpen)
     const menuItem = [
-        
+
         {
             path: "/dashboard",
             name: "Dashboard",

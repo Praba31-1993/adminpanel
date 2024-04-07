@@ -200,15 +200,6 @@ const renderActiveShape = (props) => {
         endAngle={endAngle}
         fill={fill}
       />
-      {/* <Sector
-        cx={cx}
-        cy={cy}
-        startAngle={startAngle}
-        endAngle={endAngle}
-        innerRadius={outerRadius + 6}
-        outerRadius={outerRadius + 10}
-        fill={fill}
-      /> */}
       <path
         d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
         stroke={fill}

@@ -9,9 +9,7 @@ export const validationMessages ={
     mobileNumber_required:'Mobile Number is required',
     job_role_required:"Please select a job role.",
     password:"Password must be between 6 and 20 characters long and contain at least one uppercase letter and one digit",
-    password_required:"Password is required"
-    
-    
+    password_required:"Password is required"    
 }
 
 export const toastMessages = {

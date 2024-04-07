@@ -348,8 +348,6 @@ const LineChartScreen = ({ title }) => {
           <Line type="monotone" dataKey="loss" stroke="red" />
         </>
         }
-
-        {/* <Line type="monotone" dataKey="uv" stroke="#82ca9d" /> */}
       </LineChart>
     </ResponsiveContainer>
   );

@@ -11,13 +11,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from "react-router-dom";
-import Logo from "../asserts/images/jpg/uvlogo.jpg"
 
-
-const pages = [ ];
-const settings = ['Profile','Logout'];
+const pages = [];
+const settings = ['Profile', 'Logout'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -36,7 +33,7 @@ function Navbar() {
 
   const handleCloseUserMenu = (setting) => {
     setAnchorElUser(null);
-    if(setting === 'Logout'){
+    if (setting === 'Logout') {
       navigate('/')
     }
   };
@@ -115,7 +112,7 @@ function Navbar() {
               textDecoration: 'none',
             }}
           >
-             UV TECHNOLOGY
+            UV TECHNOLOGY
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -152,7 +149,7 @@ function Navbar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={()=>handleCloseUserMenu(setting)}>
+                <MenuItem key={setting} onClick={() => handleCloseUserMenu(setting)}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
