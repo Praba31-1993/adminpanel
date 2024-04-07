@@ -3,13 +3,14 @@
 }
 main{
   padding: 20px;
-  background: #e8eff9;
+  background: #FAFAFA;
 }
 .sidebar{
   background: #1b1b29;
   color: #939393;
   height: 100vh;
   transition: all 0.5s;
+  
 }
 .top_section{
   display: flex;
@@ -57,20 +58,29 @@ main{
   .lineChart{
     width: 48%;
   }
+  .network{
+    width: 59%;
+  }
+  .meetingNotification{
+    width: 38%;
+  }
   .pieChart{
-    width: 48%;
+    width: 49%;
   }
   }
 
 @media only screen and (min-width: 767px) and (max-width: 960px) {
-  .lineChart, .pieChart{
+  .lineChart, .pieChart, .network, .meetingNotification{
     width: 100%;
+  }
+  .networkMeeting,.chart{
+    padding: 20px;
   }
   
 }
 
 @media only screen and (max-width: 768px) {
-  .lineChart, .pieChart{
+  .lineChart, .pieChart, .network, .meetingNotification{
     width: 100%;
   }
   .piechartScreen{

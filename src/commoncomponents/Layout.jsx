@@ -5,6 +5,7 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import ListItemButton from '@mui/material/ListItemButton';
+import Navbar from './Navbar';
 
 function Layout({ children }) {
     const [isOpen, setIsOpen] = useState(true)
@@ -43,8 +44,8 @@ function Layout({ children }) {
     ]
 
     return (
-        <div className='row' style={{ marginRight: '0px' }}>
-            <div className='col-md-2 col-sm-12' style={{ display: isOpen ? 'block' : 'none' }}>
+        <div className='row' style={{ marginRight: '0px', background: '#FAFAFA' }}>
+            <div className='col-md-2 col-sm-12 w-100' style={{ display: isOpen ? 'block' : 'none' }}>
                 <div className='sidebar'>
                     <div className='top_section' style={{ padding: isOpen ? '10px' : '25px' }}>
                         <ListItemButton style={{ display: isOpen ? "flex" : "none" }}>
@@ -63,8 +64,11 @@ function Layout({ children }) {
                     ))}
                 </div>
             </div>
-            <div className='col-md-10'>
-                <main>{children}</main>
+            <div className='col-md-10 w-100' style={{ marginLeft: '-10px' }}>
+                <Navbar />
+                <main>
+
+                    {children}</main>
             </div>
         </div>
     );

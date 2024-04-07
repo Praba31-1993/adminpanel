@@ -4,7 +4,9 @@ import SharesImage from "../asserts/images/png/shares.png"
 import ProjectImage from "../asserts/images/png/projects.png"
 import EmployeeImage from "../asserts/images/png/employees.png"
 import { FaCommentAlt, FaRegChartBar, FaShoppingBag, FaThList, FaBars, FaTh, FaUserAlt } from "react-icons/fa"
-function CardHeaders({ title, price, totalProjects, totalEmployees, backgroundColor }) {
+import PopOverMenu from './PopoverMenu';
+function CardHeaders({ title, price, totalProjects, totalEmployees, backgroundColor,shareValues }) {
+   
     return (
         <>
             <div class="card p-3 d-flex-column cardHeader" style={{  borderRadius: '12px',backgroundColor:backgroundColor, border:'1px solid blue' }}>
@@ -13,7 +15,7 @@ function CardHeaders({ title, price, totalProjects, totalEmployees, backgroundCo
                         {title}
                     </h5>
                     <div >
-                        <FaBars />
+                        <PopOverMenu shareValues={(data)=>shareValues(data)}/>
                     </div>
                 </div>
                 <div className='d-flex justify-content-between'>
