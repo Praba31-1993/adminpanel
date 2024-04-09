@@ -4,6 +4,7 @@ import LineChartScreen from '../../commoncomponents/LineChartScreen';
 import PieChartScreen from '../../commoncomponents/PieChartScreen';
 import ToDoList from '../../commoncomponents/ToDoList';
 import { price, projectAndEmployees } from '../../commoncomponents/Datas';
+import Layout from '../../commoncomponents/Layout';
 
 function Dashboard() {
     const [sharesRevenueAssets, setSharesRevenueAssets] = useState('Shares')
@@ -21,6 +22,7 @@ function Dashboard() {
 
     return (
         <div>
+            <Layout>
             <div className='row d-flex flex-wrap justify-content-between' style={{ gap: '1em', padding: '20px 20px 0 20px' }}>
 
                 <CardHeaders title={sharesRevenueAssets} price={price} backgroundColor={"lightsteelblue"} shareValues={(data) => handleShareValues(data)} />
@@ -67,6 +69,7 @@ function Dashboard() {
                     </div>
                 </div>
             </div>
+            </Layout>
         </div>
     );
 }
